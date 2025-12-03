@@ -4,102 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Virat Kohli Gallery</title>
+    <style>
+        /* Reset margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>Document</title>
-</head>
-<style>
-body {
-    background: black;
-    overflow: hidden;
-}
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            display: flex;
+            flex-direction: column;
+        }
 
-@keyframes stars {
-    from {transform: translateY(0);}
-    to {transform: translateY(-1000px);}
-}
+        h1 {
+            font-size: 55px;
+            color: #fff;
+            text-align: center;
+            margin: 30px 0;
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
 
-.stars {
-    width: 2px;
-    height: 2px;
-    background: white;
-    position: absolute;
-    animation: stars 10s linear infinite;
-}
+        @keyframes neon {
+            from { text-shadow: 0 0 5px #ff5f9e, 0 0 10px #ff5f9e, 0 0 20px #ff5f9e; }
+            to   { text-shadow: 0 0 15px #ff9ecb, 0 0 30px #ff9ecb, 0 0 45px #ff9ecb; }
+        }
 
-    .gallery-container {
-            width: 100%;
-            margin: auto;
-            padding: 50px;
+        /* Make gallery expand and scroll if needed */
+        .gallery-container {
+            flex: 1; /* Take remaining space */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 30px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             grid-gap: 15px;
+            overflow-y: auto; /* Scroll if content exceeds viewport */
         }
-          .gallery-container img {
+
+        .img-box {
             width: 100%;
             height: 250px;
-            object-fit: contain;
+            overflow: hidden;
             border-radius: 10px;
             border: 3px solid white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: 0.3s;
         }
-        .gallery-container img:hover {
-    transform: scale(1.07);
-    transition: 0.4s;
-}
-.gallery-container img:hover {
-    filter: blur(2px);
-}
 
-.gallery-container img {
-    filter: grayscale(100%);
-    transition: 0.4s;
-}
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Image fills the box */
+            transition: transform 0.4s, filter 0.4s;
+            filter: grayscale(100%);
+        }
 
-.gallery-container img:hover {
-    filter: grayscale(0%);
-}
+        .img-box img:hover {
+            transform: scale(1.07);
+            filter: grayscale(0%);
+        }
 
-h1 {
-    font-size: 55px;
-    color: #fff;
-    text-align: center;
-    animation: neon 1.5s ease-in-out infinite alternate;
-}
+        footer {
+            background-color: black;
+            color: red;
+            text-align: center;
+            padding: 20px;
+            flex-shrink: 0; /* Keep footer at bottom */
+        }
 
-@keyframes neon {
-    from { text-shadow: 0 0 5px #ff5f9e, 0 0 10px #ff5f9e, 0 0 20px #ff5f9e; }
-    to   { text-shadow: 0 0 15px #ff9ecb, 0 0 30px #ff9ecb, 0 0 45px #ff9ecb; }
-}
-
-
-    footer{
-        background-color: black;
-        font-family: 'Poppins', sans-serif;
-        color: red;
-        text-align: center;
-        padding:20px;
-    }
-</style>
+    </style>
+</head>
 <body>
-    <h1>Virat kohli</h1>
-    <div class="gallery-container">
 
-        <img src="https://wallpaperbat.com/img/1434518-hd-king-kohli-wallpaper.jpg" alt="photo1">
-        <img src="https://sm.mashable.com/mashable_in/photo/default/virat-australia-cover-copy_hur7.jpg" alt="photo1">
-        <img src="https://statico.sportskeeda.com/editor/2024/07/c8200-17200014126957-1920.jpg" alt="photo1">
-        <img src="https://img1.hscicdn.com/image/upload/f_auto/lsci/db/PICTURES/CMS/371300/371317.jpg"alt="photo1">
-        <img src="https://data1.ibtimes.co.in/en/full/669688/virat-kohli.jpg?h=450&l=50&t=40" alt="photo1">
-        <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/01/07/775085-virat-kohli-aus-trophy-reuters.jpg" alt="photo1">
-        <img src="https://d16f573ilcot6q.cloudfront.net/wp-content/uploads/2025/06/Virat-Kohli.webp" alt="photo1">
-        <img src="http://s.ndtvimg.com/images/content/2016/mar/806/virat-kohli-charles-3103.jpg" alt="photo1">
-        <img src="https://www.baltana.com/files/wallpapers-17/Virat-Kohli-Best-Wallpaper-43034.jpg" alt="photo1">
-        <img src="https://statico.sportskeeda.com/editor/2023/02/45c73-16775699281087-1920.jpg" alt="photo1">
+    <h1>Virat Kohli</h1>
+
+    <div class="gallery-container">
+        <div class="img-box">
+            <img src="https://wallpaperbat.com/img/1434518-hd-king-kohli-wallpaper.jpg" alt="photo1">
+        </div>
+        <div class="img-box">
+            <img src="https://sm.mashable.com/mashable_in/photo/default/virat-australia-cover-copy_hur7.jpg" alt="photo2">
+        </div>
+        <div class="img-box">
+            <img src="https://statico.sportskeeda.com/editor/2024/07/c8200-17200014126957-1920.jpg" alt="photo3">
+        </div>
+        <div class="img-box">
+            <img src="https://img1.hscicdn.com/image/upload/f_auto/lsci/db/PICTURES/CMS/371300/371317.jpg" alt="photo4">
+        </div>
+        <div class="img-box">
+            <img src="https://data1.ibtimes.co.in/en/full/669688/virat-kohli.jpg?h=450&l=50&t=40" alt="photo5">
+        </div>
+        <div class="img-box">
+            <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/01/07/775085-virat-kohli-aus-trophy-reuters.jpg" alt="photo6">
+        </div>
+        <div class="img-box">
+            <img src="https://d16f573ilcot6q.cloudfront.net/wp-content/uploads/2025/06/Virat-Kohli.webp" alt="photo7">
+        </div>
+        <div class="img-box">
+            <img src="http://s.ndtvimg.com/images/content/2016/mar/806/virat-kohli-charles-3103.jpg" alt="photo8">
+        </div>
+        <div class="img-box">
+            <img src="https://www.baltana.com/files/wallpapers-17/Virat-Kohli-Best-Wallpaper-43034.jpg" alt="photo9">
+        </div>
+        <div class="img-box">
+            <img src="https://statico.sportskeeda.com/editor/2023/02/45c73-16775699281087-1920.jpg" alt="photo10">
+        </div>
     </div>
+
     <footer>
         <p>The Legend</p>
-        
     </footer>
-    
+
 </body>
 </html>

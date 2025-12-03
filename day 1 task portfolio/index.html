@@ -1,91 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Simple Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <h1 class="logo">Akash's Portfolio</h1>
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Virat Kohli Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <main>
-      <section class="hero container" id="home">
-        <div class="hero-left">
-          <h2>Hello — I'm Akash</h2>
-          <p>Front-end developer / Designer. I make simple, accessible web experiences.</p>
-          <p><a class="cta" href="#contact">Get in touch</a></p>
+        body, html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 55px;
+            color: #fff;
+            text-align: center;
+            margin: 20px 0;
+            animation: neon 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon {
+            from { text-shadow: 0 0 5px #ff5f9e, 0 0 10px #ff5f9e, 0 0 20px #ff5f9e; }
+            to   { text-shadow: 0 0 15px #ff9ecb, 0 0 30px #ff9ecb, 0 0 45px #ff9ecb; }
+        }
+        .wrap{
+      max-width:980px;
+      margin:0 auto;
+      backdrop-filter: blur(4px);
+      padding:10px 0;
+        }
+
+        .gallery-container {
+            flex: 1; /* take remaining space */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap :var(--gap);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 15px;
+            padding-bottom: 20px;
+            overflow-y: auto; /* allows scrolling if gallery too tall */
+        }
+
+        .img-box {
+            width: 100%;
+            height: 30vh; /* responsive height relative to viewport */
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fills the box */
+            transition: transform 0.4s, filter 0.4s;
+            filter: grayscale(100%);
+        }
+
+        .img-box img:hover {
+            transform: scale(1.07);
+            filter: grayscale(0%);
+        }
+
+        footer {
+            background-color: black;
+            color: red;
+            text-align: center;
+            padding: 20px;
+            flex-shrink: 0; /* ensures footer stays visible */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Virat Kohli</h1>
+
+    <div class="gallery-container">
+        <!-- Repeat img-box for all images -->
+        <div class="img-box">
+            <img src="https://wallpaperbat.com/img/1434518-hd-king-kohli-wallpaper.jpg" alt="photo1">
         </div>
-        <div class="hero-right">
-          <div class="avatar">
-            <img id="profilePhoto" src="avatar.jpg" alt="Your Name photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="initials" style="display:none">YN</div>
-          </div>
+        <div class="img-box">
+            <img src="https://sm.mashable.com/mashable_in/photo/default/virat-australia-cover-copy_hur7.jpg" alt="photo2">
         </div>
-      </section>
-
-      <section class="container about" id="about">
-        <h3>About</h3>
-        <p>Short bio: passionate about building clean interfaces and learning new web technologies.</p>
-      </section>
-
-      <section class="container projects" id="projects">
-        <h3>Projects</h3>
-        <div class="grid">
-          <article class="card">
-            <h4>Agro Connect</h4>
-            <p>Developed a weather forecasting website that integrates real-time meteorological data from public APIs to provide accurate, location-based weather updates. Features responsive UI showing temperature, humidity, wind speed, and short-term forecasts with clean visual design for accessibility across devices.</p>
-            <p><small>Focus: data visualization, responsive design, API integration.</small></p>
-          </article>
-          <article class="card">
-            <h4>Stampede Prevention</h4>
-            <p>Designed a Stampede Prevention System using real-time video surveillance, IoT sensors, and AI-based motion analysis to assess crowd density and detect panic movements. Issues automatic alerts to authorities when high-risk situations are detected. Emphasis on scalability and real-time performance for large events.</p>
-            <p><small>Focus: real-time processing, scalability, public safety.</small></p>
-          </article>
+        <div class="img-box">
+            <img src="https://statico.sportskeeda.com/editor/2024/07/c8200-17200014126957-1920.jpg" alt="photo3">
         </div>
-      </section>
+        <div class="img-box">
+            <img src="https://img1.hscicdn.com/image/upload/f_auto/lsci/db/PICTURES/CMS/371300/371317.jpg" alt="photo4">
+        </div>
+        <div class="img-box">
+            <img src="https://data1.ibtimes.co.in/en/full/669688/virat-kohli.jpg?h=450&l=50&t=40" alt="photo5">
+        </div>
+        <div class="img-box">
+            <img src="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2019/01/07/775085-virat-kohli-aus-trophy-reuters.jpg" alt="photo6">
+        </div>
+        <div class="img-box">
+            <img src="https://d16f573ilcot6q.cloudfront.net/wp-content/uploads/2025/06/Virat-Kohli.webp" alt="photo7">
+        </div>
+        <div class="img-box">
+            <img src="http://s.ndtvimg.com/images/content/2016/mar/806/virat-kohli-charles-3103.jpg" alt="photo8">
+        </div>
+        <div class="img-box">
+            <img src="https://www.baltana.com/files/wallpapers-17/Virat-Kohli-Best-Wallpaper-43034.jpg" alt="photo9">
+        </div>
+        <div class="img-box">
+            <img src="https://statico.sportskeeda.com/editor/2023/02/45c73-16775699281087-1920.jpg" alt="photo10">
+        </div>
+    </div>
 
-      <section class="container skills" id="skills">
-        <h3>Skills</h3>
-        <ul class="skills-list">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-        </ul>
-      </section>
-
-      <section class="container contact" id="contact">
-        <h3>Contact</h3>
-        <form id="contactForm">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required>
-
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-
-          <button type="submit">Send</button>
-          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
-        </form>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">© <span id="year"></span> Akash — Simple Portfolio</div>
+    <footer>
+        <p>The Legend </p>
     </footer>
 
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
