@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1 class="logo">Akash's Portfolio</h1>
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container" id="home">
+        <div class="hero-left">
+          <h2>Hello — I'm Akash</h2>
+          <p>Front-end developer / Designer. I make simple, accessible web experiences.</p>
+          <p><a class="cta" href="#contact">Get in touch</a></p>
+        </div>
+        <div class="hero-right">
+          <div class="avatar">
+            <img id="profilePhoto" src="avatar.jpg" alt="Your Name photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="initials" style="display:none">YN</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container about" id="about">
+        <h3>About</h3>
+        <p>Short bio: passionate about building clean interfaces and learning new web technologies.</p>
+      </section>
+
+      <section class="container projects" id="projects">
+        <h3>Projects</h3>
+        <div class="grid">
+          <article class="card">
+            <h4>Agro Connect</h4>
+            <p>Developed a weather forecasting website that integrates real-time meteorological data from public APIs to provide accurate, location-based weather updates. Features responsive UI showing temperature, humidity, wind speed, and short-term forecasts with clean visual design for accessibility across devices.</p>
+            <p><small>Focus: data visualization, responsive design, API integration.</small></p>
+          </article>
+          <article class="card">
+            <h4>Stampede Prevention</h4>
+            <p>Designed a Stampede Prevention System using real-time video surveillance, IoT sensors, and AI-based motion analysis to assess crowd density and detect panic movements. Issues automatic alerts to authorities when high-risk situations are detected. Emphasis on scalability and real-time performance for large events.</p>
+            <p><small>Focus: real-time processing, scalability, public safety.</small></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container skills" id="skills">
+        <h3>Skills</h3>
+        <ul class="skills-list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </section>
+
+      <section class="container contact" id="contact">
+        <h3>Contact</h3>
+        <form id="contactForm">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Send</button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© <span id="year"></span> Akash — Simple Portfolio</div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
