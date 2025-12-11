@@ -1,0 +1,41 @@
+:root{
+  
+  --bg-color: #f0f8ff; /* light base color */
+  --bg: linear-gradient(180deg, #fbfdff 0%, #f3f6fb 100%), radial-gradient(circle at 10% 10%, rgba(37,99,235,0.04), transparent 20%);
+  --card:#ffffff;
+  --accent:#2563eb;
+  --muted:#6b7280;
+  --max-width:1000px;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.5;margin:0;background-color:var(--bg-color);background-image:var(--bg);background-repeat:no-repeat;background-attachment:fixed;background-size:cover;color:#111}
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem}
+.site-header{background:#fff;border-bottom:1px solid #e6e6e6;position:sticky;top:0;z-index:20}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;padding:1rem 1rem}
+.logo{margin:0;font-size:1.1rem}
+.nav a{margin-left:1rem;color:var(--muted);text-decoration:none}
+.nav a:hover{color:var(--accent)}
+.hero{display:flex;gap:2rem;align-items:center;padding:3rem 1rem}
+.hero-left h2{margin:0 0 .5rem;font-size:1.8rem}
+.hero-left p{margin:.4rem 0;color:var(--muted)}
+.cta{display:inline-block;padding:.6rem 1rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
+.avatar{width:120px;height:120px;border-radius:999px;background:linear-gradient(135deg,#eef2ff,#e0f2fe);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:2rem;overflow:hidden;position:relative}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar .initials{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:2rem}
+.about,.projects,.skills,.contact{background:transparent;padding:2rem 1rem}
+.projects .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:var(--card);padding:1rem;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.skills-list{display:flex;gap:.5rem;list-style:none;padding:0;margin:0}
+.skills-list li{background:#fff;padding:.4rem .8rem;border-radius:999px;border:1px solid #eee}
+.contact form{max-width:520px;background:var(--card);padding:1rem;border-radius:8px}
+.contact label{display:block;margin-top:.6rem;font-size:.9rem;color:var(--muted)}
+.contact input,.contact textarea{width:100%;padding:.6rem;margin-top:.25rem;border:1px solid #e6e6e6;border-radius:6px}
+.contact button{margin-top:.8rem;background:var(--accent);color:#fff;border:none;padding:.6rem 1rem;border-radius:6px}
+.form-message{margin-top:.6rem;color:var(--muted);font-size:.95rem}
+.site-footer{padding:1rem 0;background:#fff;border-top:1px solid #e6e6e6}
+
+@media (max-width:700px){
+  .hero{flex-direction:column;text-align:center}
+  .site-header .container{padding:.6rem 1rem}
+  .nav{display:none}
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff3e6;
+            padding: 40px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #cc5500;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 14px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #cc5500;
+            color: white;
+            border: none;
+            font-size: 17px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #a64400;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let mobile = document.getElementById("mobile").value;
+            let email = document.getElementById("email").value;
+            let movie = document.getElementById("movie").value;
+            let show = document.getElementById("show").value;
+            let tickets = document.getElementById("tickets").value;
+            let date = document.getElementById("date").value;
+            let seat = document.getElementById("seat").value;
+
+            // Validation 1: Name required
+            if (name === "") {
+                alert("Please enter your name");
+                return false;
+            }
+
+            // Validation 2: Age must be valid
+            if (age === "" || age < 5 || age > 100) {
+                alert("Enter a valid age (5 - 100)");
+                return false;
+            }
+
+            // Validation 3: Mobile number 10 digits
+            if (!/^[0-9]{10}$/.test(mobile)) {
+                alert("Enter a valid 10-digit mobile number");
+                return false;
+            }
+
+            // Validation 4: Email format
+            let emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailCheck.test(email)) {
+                alert("Enter a valid email address");
+                return false;
+            }
+
+            // Validation 5: Movie must be selected
+            if (movie === "") {
+                alert("Please select a movie");
+                return false;
+            }
+
+            // Validation 6: Show time required
+            if (show === "") {
+                alert("Please select a show time");
+                return false;
+            }
+
+            // Validation 7: Tickets must be at least 1
+            if (tickets < 1) {
+                alert("Book at least 1 ticket");
+                return false;
+            }
+
+            // Validation 8: Show date cannot be past
+            let today = new Date().toISOString().split("T")[0];
+            if (date < today) {
+                alert("Show date cannot be a past date");
+                return false;
+            }
+
+            if (seat === "") {
+                alert("Please select seat type");
+                return false;
+            }
+
+            alert("Movie Tickets Booked Successfully!");
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Movie Ticket Booking Form</h2>
+
+        <form onsubmit="return validateForm()">
+
+            <label>Full Name:</label>
+            <input type="text" id="name">
+
+            <label>Age:</label>
+            <input type="number" id="age">
+
+            <label>Mobile Number:</label>
+            <input type="text" id="mobile">
+
+            <label>Email:</label>
+            <input type="text" id="email">
+
+            <label>Select Movie:</label>
+            <select id="movie">
+                <option value="">--Select Movie--</option>
+                <option>Avengers: Endgame</option>
+                <option>KGF Chapter 2</option>
+                <option>Leo</option>
+                <option>Jailer</option>
+                <option>Pushpa 2</option>
+            </select>
+
+            <label>Show Time:</label>
+            <select id="show">
+                <option value="">--Select Time--</option>
+                <option>10:00 AM</option>
+                <option>1:00 PM</option>
+                <option>4:00 PM</option>
+                <option>7:00 PM</option>
+                <option>10:00 PM</option>
+            </select>
+
+            <label>Seat Type:</label>
+            <select id="seat">
+                <option value="">--Select Seat--</option>
+                <option>Normal</option>
+                <option>Premium</option>
+                <option>VIP</option>
+            </select>
+
+            <label>Number of Tickets:</label>
+            <input type="number" id="tickets">
+
+            <label>Date of Show:</label>
+            <input type="date" id="date">
+
+            <button type="submit">Book Ticket</button>
+
+        </form>
+    </div>
+
+</body>
+</html>

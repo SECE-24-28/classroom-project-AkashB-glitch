@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field Trip Adventures</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background: #0f0f0f;
+            font-family: "Poppins", sans-serif;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(6px);
+        }
+
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: bold;
+            color: #6a0eff !important;
+            text-shadow: 0px 0px 8px #32ff0e;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4") no-repeat center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        #hero::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0; left: 0;
+            background: rgba(0,0,0,0.7);
+        }
+
+        #hero .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        #hero h1 {
+            font-size: 60px;
+            font-weight: 800;
+            text-shadow: 0 0 15px #0ed7ff;
+        }
+
+        #hero p {
+            font-size: 20px;
+            color: #ddd;
+        }
+
+        /* Categories */
+        .category-btn {
+            background: #111;
+            border: 2px solid #0ecbff;
+            color: #0ecbff;
+            transition: 0.3s;
+        }
+
+        .category-btn:hover {
+            background: #0ef3ff;
+            color: #000;
+            box-shadow: 0 0 20px #00eaff;
+        }
+
+        /* Trip Cards */
+        .trip-card {
+            background: #1a1a1a;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .trip-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .trip-card:hover img {
+            transform: scale(1.15);
+        }
+
+        .trip-card:hover {
+            box-shadow: 0 0 20px #ff0400;
+            transform: translateY(-5px);
+        }
+
+        /* Search bar */
+        #searchBar {
+            background: #111;
+            border: 1px solid #0c0c0c;
+            color: #00eaff;
+        }
+
+        #searchBar::placeholder {
+            color: #00eaff;
+        }
+
+        /* Footer */
+        footer {
+            background: #050505;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Field Trip Adventures 🏞️</a>
+
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#trips">Trips</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#upcoming">Upcoming</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero">
+        <div class="content">
+            <h1>Welcome to Field Trip Adventures</h1>
+            <p>Discover exciting educational outings and explore the world around you</p>
+            <a href="#trips" class="btn btn-info btn-lg mt-3">Explore Trips</a>
+        </div>
+    </section>
+
+    <!-- Search -->
+    <div class="container mt-4">
+        <input type="text" class="form-control form-control-lg" id="searchBar" placeholder="Search trips...">
+    </div>
+
+    <!-- Trip Categories -->
+    <div class="container text-center mt-4">
+        <button class="btn category-btn mx-2">Nature</button>
+        <button class="btn category-btn mx-2">History</button>
+        <button class="btn category-btn mx-2">Science</button>
+        <button class="btn category-btn mx-2">Art</button>
+        <button class="btn category-btn mx-2">Adventure</button>
+    </div>
+
+    <!-- Trips Section -->
+    <section id="trips" class="container py-5">
+        <h2 class="text-center mb-4 text-info">Trip Collection</h2>
+
+        <div class="row g-4">
+
+            <!-- Trip Card -->
+            <div class="col-md-4 trip-item" data-name="zoo animals nature wildlife">
+                <div class="trip-card" data-bs-toggle="modal" data-bs-target="#tripModal">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306" alt="">
+                    <div class="p-3">
+                        <h4>Zoo Visit</h4>
+                        <p class="text-muted">Nature / Wildlife</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 trip-item" data-name="museum history artifacts culture">
+                <div class="trip-card" data-bs-toggle="modal" data-bs-target="#tripModal">
+                    <img src="https://images.unsplash.com/photo-1566127992631-137a41c15f55" alt="">
+                    <div class="p-3">
+                        <h4>Museum Tour</h4>
+                        <p class="text-muted">History / Culture</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 trip-item" data-name="aquarium ocean marine science">
+                <div class="trip-card" data-bs-toggle="modal" data-bs-target="#tripModal">
+                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19" alt="">
+                    <div class="p-3">
+                        <h4>Aquarium Exploration</h4>
+                        <p class="text-muted">Science / Marine Life</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 trip-item" data-name="park hiking nature outdoor">
+                <div class="trip-card" data-bs-toggle="modal" data-bs-target="#tripModal">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4" alt="">
+                    <div class="p-3">
+                        <h4>National Park Hike</h4>
+                        <p class="text-muted">Nature / Outdoor</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 trip-item" data-name="farm agriculture animals learning">
+                <div class="trip-card" data-bs-toggle="modal" data-bs-target="#tripModal">
+                    <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad" alt="">
+                    <div class="p-3">
+                        <h4>Farm Visit</h4>
+                        <p class="text-muted">Agriculture / Animals</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 trip-item" data-name="planetarium space science stars">
+                <div class="trip-card" data-bs-toggle="modal" data-bs-target="#tripModal">
+                    <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06" alt="">
+                    <div class="p-3">
+                        <h4>Planetarium Show</h4>
+                        <p class="text-muted">Science / Space</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Trip Modal -->
+    <div class="modal fade" id="tripModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title">Trip Details</h5>
+                    <button class="btn-close bg-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is a sample trip description. You can add details, itinerary, safety guidelines, photos, and more.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container py-5">
+        <h2 class="text-center text-info mb-3">Contact Us</h2>
+
+        <div class="card p-4 bg-dark border-info shadow">
+            <input type="text" class="form-control mb-3" placeholder="Your Name" />
+            <input type="email" class="form-control mb-3" placeholder="Your Email" />
+            <textarea class="form-control mb-3" rows="3" placeholder="Message"></textarea>
+            <button class="btn btn-info w-100">Send</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Field Trip Adventures | All Rights Reserved
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
